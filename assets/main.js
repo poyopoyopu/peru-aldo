@@ -1,0 +1,2 @@
+const io = new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const hero=document.querySelector('.hero-image');if(hero&&!matchMedia('(prefers-reduced-motion: reduce)').matches){addEventListener('scroll',()=>{const y=Math.min(scrollY,innerHeight);hero.style.backgroundPosition=`center calc(47% + ${y*.07}px)`},{passive:true})}
